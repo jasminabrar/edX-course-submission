@@ -2,9 +2,9 @@ name: Run Layout Verification
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   verification:
