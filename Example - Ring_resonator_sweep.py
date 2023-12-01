@@ -171,6 +171,7 @@ zoom_out(cell)
 
 # Save
 path = os.path.dirname(os.path.realpath(__file__))
+print('Path:', path)
 filename = 'Test_structures_ring_resonators'
 file_out = export_layout(cell, path, filename, relative_path = '', format='oas', screenshot=True)
 
@@ -178,6 +179,7 @@ from SiEPIC.verification import layout_check
 print('SiEPIC_EBeam_PDK: example_Ring_resonator_sweep.py - verification')
 
 file_lyrdb = os.path.join(path,filename+'.lyrdb')
+print('file_lyrdb', file_lyrdb)
 num_errors = layout_check(cell = cell, verbose=False, GUI=True, file_rdb=file_lyrdb)
 
 if Python_Env == 'Script':
