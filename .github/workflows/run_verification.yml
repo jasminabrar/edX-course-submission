@@ -35,7 +35,7 @@ jobs:
 
       - name: Move output file to github repo
         run: |
-          mv /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb Test_structures_ring_resonators.lyrdb
+          mv /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb .
         working-directory: /
 
       - name: Commit and push changes
