@@ -26,3 +26,10 @@ jobs:
           
       - name: run example layout verification
         run: python "Example - Ring_resonator_sweep.py"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: layout-check-output
+          path: /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
+
