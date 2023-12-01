@@ -40,8 +40,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --local user.email "jasminabrarr@gmail.com"
-          git config --local user.name "jasminabrar"
+          git config --global user.email "jasminabrarr@gmail.com"
+          git config --global user.name "jasminabrar"
           git add /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
           echo "added file"
           git commit -m "Add layout check output"
