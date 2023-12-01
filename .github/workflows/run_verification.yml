@@ -1,6 +1,7 @@
 name: Run Layout Verification
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
