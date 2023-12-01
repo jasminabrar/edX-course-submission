@@ -2,7 +2,8 @@ name: Run Layout Verification
 
 on:
   push:
-    branches: ["master"]
+    branches:
+      - master
 
 jobs:
   verification:
