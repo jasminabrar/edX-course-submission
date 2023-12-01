@@ -44,8 +44,9 @@ jobs:
           git config --local user.name "jasminabrar"
           git add /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
           echo "added file"
+          git remote add origin_with_token https://jasminabrar:${{ secrets.PAT }}@github.com/jasminabrar/edX-course-submission.git
           git commit -m "Add layout check output"
-          git push
+          git push origin_with_token main
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
           username: jasminabrar
