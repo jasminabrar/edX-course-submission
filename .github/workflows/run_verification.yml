@@ -27,9 +27,22 @@ jobs:
       - name: run example layout verification
         run: python "Example - Ring_resonator_sweep.py"
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: layout-check-output
-          path: /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: layout-check-output
+      #     path: /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
+
+      - name: Move output file to github repo
+        run: |
+          mv /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb Test_structures_ring_resonators.lyrdb
+        working-directory: /
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "jasminabrarr@gmail.com"
+          git config --local user.name "jasminabrar"
+          git add Test_structures_ring_resonators.lyrdb
+          git commit -m "Add layout check output"
+          git push
 
