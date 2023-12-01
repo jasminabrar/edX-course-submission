@@ -25,14 +25,15 @@ jobs:
           python -m pip install --upgrade SiEPIC
           
       - name: run example layout verification
-        run: python "Example - Ring_resonator_sweep.py"
+        #run: python "Example - Ring_resonator_sweep.py"
+        run: python run_verification.py
 
       - name: Commit and push changes
         run: |
           git config --global user.email "jasminabrar@users.noreply.github.com"
           git config --global user.name "jasminabrar"
-          git add /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
-          git commit -m "Add layout check output"
+          git add /home/runner/work/edX-course-submission/edX-course-submission/ebeam_adiabatic_te1550.gds.lyrdb
+          git commit -m "Add layout check output for ebeam_adiabatic_te1550.gds"
           git push
 
 
