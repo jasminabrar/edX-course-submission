@@ -28,6 +28,13 @@ jobs:
         #run: python "Example - Ring_resonator_sweep.py"
         run: python run_verification.py
 
+      - name: Check for changes
+        run: |
+          if git diff --exit-code; then
+            echo "No changes to commit. Skipping commit and push."
+            exit 0
+          fi
+
       - name: Commit and push changes
         run: |
           git config --global user.email "jasminabrar@users.noreply.github.com"
