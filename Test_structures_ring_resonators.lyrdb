@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report-database>
+ <description/>
+ <original-file/>
+ <generator/>
+ <top-cell>RingResonator</top-cell>
+ <tags>
+ </tags>
+ <categories>
+  <category>
+   <name>Component</name>
+   <description/>
+   <categories>
+    <category>
+     <name>No components found</name>
+     <description>At minimum, shapes must be inside a cell and inside a DevRec shape. Read more about requirements for components: https://github.com/SiEPIC/SiEPIC-Tools/wiki/Component-and-PCell-Layout</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Shapes outside component</name>
+     <description>Shapes for device layers need to be inside a component. At minimum, they must be inside a cell and inside a DevRec shape. Read more about requirements for components: https://github.com/SiEPIC/SiEPIC-Tools/wiki/Component-and-PCell-Layout</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Flattened component</name>
+     <description>SiEPIC-Tools Verification, Netlist extraction, and Simulation only functions on hierarchical layouts, and not on flattened layouts.  Add to the discussion here: https://github.com/lukasc-ubc/SiEPIC-Tools/issues/37</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Overlapping component</name>
+     <description>Overlapping components (defined as overlapping DevRec layers; touching is ok)</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Invalid Pin</name>
+     <description>Invalid pin found. Read more about requirements for components: https://github.com/SiEPIC/SiEPIC-Tools/wiki/Component-and-PCell-Layout</description>
+     <categories>
+     </categories>
+    </category>
+   </categories>
+  </category>
+  <category>
+   <name>Waveguide</name>
+   <description/>
+   <categories>
+    <category>
+     <name>Path</name>
+     <description>Waveguide path: Only 2 points allowed in a path. Convert to a Waveguide if necessary.</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Radius</name>
+     <description>Not enough space to accommodate the desired bend radius for the waveguide.</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Bend points</name>
+     <description>Waveguide bend should have more points per circle.</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Manhattan</name>
+     <description>The first and last waveguide segment need to be Manhattan (vertical or horizontal) so that they can connect to device pins.</description>
+     <categories>
+     </categories>
+    </category>
+   </categories>
+  </category>
+  <category>
+   <name>Connectivity</name>
+   <description/>
+   <categories>
+    <category>
+     <name>Disconnected pin</name>
+     <description>Disconnected pin</description>
+     <categories>
+     </categories>
+    </category>
+    <category>
+     <name>Mismatched pin</name>
+     <description>Mismatched pin widths</description>
+     <categories>
+     </categories>
+    </category>
+   </categories>
+  </category>
+ </categories>
+ <cells>
+  <cell>
+   <name>RingResonator</name>
+   <variant/>
+   <references>
+   </references>
+  </cell>
+ </cells>
+ <items>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (514.732,200.5;514.752,200.5) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (514.732,180.5;514.752,180.5) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (526.352,178.76;526.352,178.74) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (515.752,179.5;515.732,179.5) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (526.352,200.24;526.352,200.26) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (515.752,199.5;515.732,199.5) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Component.'Overlapping component'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>polygon: (524.602,178.75;524.602,179.75;526.102,179.75;526.102,178.75)</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (525.352,179.74;525.352,179.76) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+  <item>
+   <tags/>
+   <category>Connectivity.'Disconnected pin'</category>
+   <cell>RingResonator</cell>
+   <visited>false</visited>
+   <multiplicity>1</multiplicity>
+   <image/>
+   <values>
+    <value>path: (525.352,201.26;525.352,201.24) w=0.5 bx=0 ex=0 r=false</value>
+   </values>
+  </item>
+ </items>
+</report-database>
