@@ -25,7 +25,8 @@ jobs:
           python -m pip install --upgrade SiEPIC
           
       - name: run example layout verification
-        run: errors=$(python run_verification.py)
+        id: run-script
+        run: python run_verification.py
 
       - name: upload artifact
         uses: actions/upload-artifact@v2
@@ -35,6 +36,8 @@ jobs:
 
       - name: fail if there are errors from layout verification
         run: |
+          errors="${{ steps.run-script.outputs.result }}"
+          echo $errors
           if [[ $errors -gt 0 ]]; then
             exit 1
           fi
