@@ -37,7 +37,6 @@ jobs:
       - name: fail if there are errors from layout verification
         run: |
           errors="${{ steps.run-script.outputs.result }}"
-          echo $errors
           if [[ $errors -gt 0 ]]; then
             echo "$errors errors detected. Please review error log uploaded as an artifact for this actions run."
             exit 1
