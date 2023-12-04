@@ -6,6 +6,7 @@ on:
     branches:
       - main
 
+
 jobs:
   verification:
     runs-on: ubuntu-latest
@@ -13,6 +14,14 @@ jobs:
     steps:
       - name: checkout repo content
         uses: actions/checkout@v2
+
+      - name: List GDS File
+        run: |
+          # Use find to locate the .gds file 
+          GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \;)
+
+          # Print the name of the .gds file
+          echo "GDS Files: $GDS_FILE"
 
         # can also specify python version if needed
       - name: setup python
@@ -27,6 +36,8 @@ jobs:
       - name: run example layout verification
         id: run-script
         run: python run_verification.py
+        env:
+          GDS_FILE: ${{ env.GDS_FILE }}
 
       - name: upload artifact
         uses: actions/upload-artifact@v2
