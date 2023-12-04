@@ -36,4 +36,7 @@ num_errors = layout_check(cell = top_cell, verbose=True, GUI=True, file_rdb=file
 
 print('SiEPIC_EBeam_PDK: ebeam_adiabatic_te1550 - done')
 
+# Print the result value to standard output
+print(f"::set-output name=result::{num_errors}")
+
 
