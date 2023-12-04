@@ -18,7 +18,7 @@ jobs:
       - name: List GDS File
         run: |
           # Use find to locate the .gds file 
-          GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \;)
+          export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \;)
 
           # Print the name of the .gds file
           echo "GDS Files: $GDS_FILE"
