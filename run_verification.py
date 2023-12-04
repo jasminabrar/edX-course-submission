@@ -11,7 +11,7 @@ import siepic_ebeam_pdk
 #gds_file = "ebeam_adiabatic_te1550.gds"
 gds_file = os.environ.get('GDS_FILE')
 
-print(gds_file)
+print("Gds file:", gds_file)
 
 # load into layout
 layout = pya.Layout()
