@@ -25,13 +25,20 @@ jobs:
           python -m pip install --upgrade SiEPIC
           
       - name: run example layout verification
-        run: python run_verification.py
+        run: errors=$(python run_verification.py)
 
-      - name: Upload artifact
+      - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: layout-errors
           path: /home/runner/work/edX-course-submission/edX-course-submission/ebeam_adiabatic_te1550.lyrdb
+
+      - name: fail if there are errors from layout verification
+        run: |
+          if [[ $errors -gt 0 ]]; then
+            exit 1
+          fi
+
         
       # - name: Commit and push changes
       #   run: |
