@@ -2,9 +2,9 @@ name: Run Layout Verification
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
 jobs:
   verification:
@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: layout-errors
-          path: /home/runner/work/edX-course-submission/edX-course-submission/Test_structures_ring_resonators.lyrdb
+          path: /home/runner/work/edX-course-submission/edX-course-submission/ebeam_adiabatic_te1550.lyrdb
         
       # - name: Commit and push changes
       #   run: |
