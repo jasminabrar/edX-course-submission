@@ -8,25 +8,8 @@ import os
 import siepic_ebeam_pdk
 import sys
 
-
-# Print all command-line arguments for debugging
-print("Command-line arguments:", sys.argv)
-
-# Check the length of sys.argv to avoid "list index out of range" issues
-if len(sys.argv) > 1:
-    gds_file = sys.argv[1]
-    print("GDS File:", gds_file)
-    
-    # Your script logic here using gds_file
-else:
-    print("Error: No command-line argument provided for GDS file.")
-
 # gds file to run verification on
-#gds_file = "ebeam_adiabatic_te1550.gds"
-#gds_file = os.environ.get('GDS_FILE')
 gds_file = sys.argv[1]
-
-print("Gds file:", gds_file)
 
 # load into layout
 layout = pya.Layout()
