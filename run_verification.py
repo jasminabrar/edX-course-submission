@@ -6,10 +6,12 @@ from SiEPIC.scripts import zoom_out
 from SiEPIC.utils import get_technology_by_name
 import os
 import siepic_ebeam_pdk
+import sys
 
 # gds file to run verification on
 #gds_file = "ebeam_adiabatic_te1550.gds"
-gds_file = os.environ.get('GDS_FILE')
+#gds_file = os.environ.get('GDS_FILE')
+gds_file = sys.argv[1]
 
 print("Gds file:", gds_file)
 
