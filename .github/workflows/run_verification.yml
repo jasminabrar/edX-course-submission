@@ -32,6 +32,11 @@ jobs:
           #locate the .gds file 
           export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \; | head -n 1)
 
+          if [[ -z "$GDS_FILE" ]]; then
+            echo "Error: No GDS file provided."
+            exit 78  # Exit with a neutral exit code
+          fi
+
           # print the name of the .gds file
           echo "GDS Files: $GDS_FILE"
         
