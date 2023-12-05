@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: layout-errors
-          path: /home/runner/work/edX-course-submission/edX-course-submission/${GDS_FILE_NAME}.lyrdb
+          path: /home/runner/work/edX-course-submission/edX-course-submission/${{ env.GDS_FILE_NAME }}.lyrdb
 
       - name: fail if there are errors from layout verification
         run: |
