@@ -15,14 +15,6 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v2
 
-      # - name: List GDS File
-      #   run: |
-      #     # Use find to locate the .gds file 
-      #     export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \; | head -n 1)
-
-      #     # Print the name of the .gds file
-      #     echo "GDS Files: $GDS_FILE"
-
         # can also specify python version if needed
       - name: setup python
         uses: actions/setup-python@v4
@@ -33,19 +25,18 @@ jobs:
           pip install klayout SiEPIC siepic_ebeam_pdk
           python -m pip install --upgrade SiEPIC
           
-      - name: run example layout verification
+      - name: get .gds file and run example layout verification
         id: run-script
         run: |
         
-          # Use find to locate the .gds file 
+          #locate the .gds file 
           export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \; | head -n 1)
 
-          # Print the name of the .gds file
+          # print the name of the .gds file
           echo "GDS Files: $GDS_FILE"
         
+          # run layout verification
           python run_verification.py "$GDS_FILE"
-        # env:
-        #   GDS_FILE: ${{ env.GDS_FILE }}
 
       - name: upload artifact
         uses: actions/upload-artifact@v2
@@ -62,18 +53,5 @@ jobs:
           else
             echo "No errors detected."
           fi
-
-        
-      # - name: Commit and push changes
-      #   run: |
-      #     git config --local user.email "jasminabrar@users.noreply.github.com"
-      #     git config --local user.name "jasminabrar"
-      #     git add /home/runner/work/edX-course-submission/edX-course-submission/ebeam_adiabatic_te1550.lyrdb
-      #     #if ! git diff --quiet; then
-      #     git commit -m "Add layout check output for ebeam_adiabatic_te1550.gds"
-      #     git push
-      #     # else
-      #     #   echo "No changes to commit. Skipping commit and push."
-      #     # fi
 
 
