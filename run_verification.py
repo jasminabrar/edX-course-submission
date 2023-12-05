@@ -35,6 +35,8 @@ print('SiEPIC_EBeam_PDK: {} - verification'.format(gds_file))
 file_lyrdb = os.path.join(path,gds_file+'.lyrdb')
 num_errors = layout_check(cell = top_cell, verbose=True, GUI=True, file_rdb=file_lyrdb)
 
+print("File path:", file_lyrdb)
+
 print('SiEPIC_EBeam_PDK: {} - done'.format(gds_file))
 
 # Print the result value to standard output
