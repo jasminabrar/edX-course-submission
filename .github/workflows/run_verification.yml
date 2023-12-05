@@ -18,7 +18,7 @@ jobs:
       - name: List GDS File
         run: |
           # Use find to locate the .gds file 
-          export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \;)
+          export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \; | head -n 1)
 
           # Print the name of the .gds file
           echo "GDS Files: $GDS_FILE"
@@ -35,9 +35,9 @@ jobs:
           
       - name: run example layout verification
         id: run-script
-        run: python run_verification.py
-        env:
-          GDS_FILE: ${{ env.GDS_FILE }}
+        run: python run_verification.py ${{ env.GDS_FILE }}
+        # env:
+        #   GDS_FILE: ${{ env.GDS_FILE }}
 
       - name: upload artifact
         uses: actions/upload-artifact@v2
