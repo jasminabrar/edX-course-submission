@@ -35,7 +35,7 @@ jobs:
           
       - name: run example layout verification
         id: run-script
-        run: python run_verification.py "${GDS_FILE}"
+        run: python run_verification.py "$GDS_FILE"
         # env:
         #   GDS_FILE: ${{ env.GDS_FILE }}
 
