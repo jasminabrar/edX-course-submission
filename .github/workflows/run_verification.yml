@@ -45,6 +45,7 @@ jobs:
           
           # run layout verification on each .gds file
           for file in $GDS_FILES; do
+            echo "File: $file"
             python run_verification.py "$file"
           done
 
