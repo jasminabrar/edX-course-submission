@@ -41,7 +41,7 @@ jobs:
           # print the name of the .gds files
           echo "GDS Files: $GDS_FILES"
         
-          IFS="\n"
+          IFS=$'\n'
           
           # run layout verification on each .gds file
           for file in $GDS_FILES; do
