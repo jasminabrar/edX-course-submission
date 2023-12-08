@@ -1,12 +1,17 @@
 import pya
 from pya import *
-import SiEPIC
 from SiEPIC.verification import layout_check
 from SiEPIC.scripts import zoom_out
 from SiEPIC.utils import get_technology_by_name
 import os
-import siepic_ebeam_pdk
 import sys
+"""
+Script to load .gds file passed in through commmand line and run verification using layout_check().
+Ouput lyrdb file is saved to path specified by 'file_lyrdb' variable in the script.
+
+Jasmina Brar 12/08/23
+
+"""
 
 # gds file to run verification on
 gds_file = sys.argv[1]
@@ -15,6 +20,7 @@ gds_file = sys.argv[1]
 layout = pya.Layout()
 layout.read(gds_file)
 
+# get top cell from layout
 top_cell = layout.top_cell()
 
 
