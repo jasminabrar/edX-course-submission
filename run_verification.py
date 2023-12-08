@@ -1,8 +1,10 @@
 import pya
 from pya import *
+import SiEPIC
 from SiEPIC.verification import layout_check
 from SiEPIC.scripts import zoom_out
 from SiEPIC.utils import get_technology_by_name
+import siepic_ebeam_pdk
 import os
 import sys
 """
