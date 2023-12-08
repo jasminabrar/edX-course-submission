@@ -29,22 +29,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install klayout SiEPIC siepic_ebeam_pdk
           python -m pip install --upgrade SiEPIC
-
-      - name: get .gds files
-        run: |
-          export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
-          echo "GDS Files: $GDS_FILES"
-
           
-      - name: get .gds files, run example layout verification, copy output files to new location
+      - name: get .gds files, run example layout verification
         id: run-script
         run: |
         
           #locate the .gds files and set as environment variable
-          #export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
+          export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
 
           # print the name of the .gds files
-          #echo "GDS Files: $GDS_FILES"
+          echo "GDS Files: $GDS_FILES"
         
           IFS=$'\n'
           
@@ -53,15 +47,6 @@ jobs:
             echo "File: $file"
             python run_verification.py "$file"
           done
-
-          # export OUTPUT_FILES=$(find /home/runner/work/edX-course-submission/edX-course-submission/ -name "*.lyrdb")
-          # echo "Output files: $OUTPUT_FILES"
-
-          # mkdir -p verification_output
-
-          # for file in $OUTPUT_FILES; do
-          #   cp "$file" verification_output/
-          # done
 
       - name: move output files to new folder
         run: |
