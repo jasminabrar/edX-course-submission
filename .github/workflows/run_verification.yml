@@ -36,7 +36,7 @@ jobs:
         
           #locate the .gds files and set as environment variable
           export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
-          echo "GDS_FILES=$GDS_FILES" >> $GITHUB_ENV
+          #echo "GDS_FILES=$GDS_FILES" >> $GITHUB_ENV
 
           # print the name of the .gds files
           echo "GDS Files: $GDS_FILES"
