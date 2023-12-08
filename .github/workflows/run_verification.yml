@@ -45,7 +45,7 @@ jobs:
           # run layout verification on each .gds file
           for file in $GDS_FILES; do
             echo "File: $file"
-            python run_verification.py "$file"
+            python run_verification.py "submissions/$file"
           done
 
       - name: move output files to new folder
