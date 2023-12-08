@@ -28,7 +28,7 @@ layout.TECHNOLOGY = get_technology_by_name('EBeam')
 # run verification
 zoom_out(top_cell)
 
-path = os.path.dirname(os.path.realpath(__file__))
+path = os.path.dirname(os.path.realpath(__file__)) + "/submissions"
 filename = gds_file.split(".")[0]
 
 print('SiEPIC_EBeam_PDK: {} - verification'.format(gds_file))
