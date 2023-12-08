@@ -32,8 +32,7 @@ path = os.path.dirname(os.path.realpath(__file__))
 filename = gds_file.split(".")[0]
 
 print('SiEPIC_EBeam_PDK: {} - verification'.format(gds_file))
-full_path = os.path.join(path, "submissions")
-file_lyrdb = os.path.join(full_path,filename+'.lyrdb')
+file_lyrdb = os.path.join(path,filename+'.lyrdb')
 num_errors = layout_check(cell = top_cell, verbose=True, GUI=True, file_rdb=file_lyrdb)
 
 print("File path:", file_lyrdb)
