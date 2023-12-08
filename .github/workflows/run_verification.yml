@@ -35,7 +35,7 @@ jobs:
         run: |
         
           #locate the .gds files and set as environment variable
-          export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
+          export GDS_FILES=$(find . -type f -name "submissions/*.gds" -exec basename {} \;)
 
           # print the name of the .gds files
           echo "GDS Files: $GDS_FILES"
