@@ -28,15 +28,14 @@ layout.TECHNOLOGY = get_technology_by_name('EBeam')
 # run verification
 zoom_out(top_cell)
 
+# get file path, filename, path for output lyrdb file
 path = os.path.dirname(os.path.realpath(__file__))
 filename = gds_file.split(".")[0]
-
-print('SiEPIC_EBeam_PDK: {} - verification'.format(gds_file))
 file_lyrdb = os.path.join(path,filename+'.lyrdb')
+
+# run verification
+print('SiEPIC_EBeam_PDK: {} - verification'.format(gds_file))
 num_errors = layout_check(cell = top_cell, verbose=True, GUI=True, file_rdb=file_lyrdb)
-
-print("File path:", file_lyrdb)
-
 print('SiEPIC_EBeam_PDK: {} - done'.format(gds_file))
 
 # Print the result value to standard output
