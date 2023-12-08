@@ -44,7 +44,7 @@ jobs:
           IFS=' '
           
           # run layout verification on each .gds file
-          for file in $GDS_FILES: do
+          for file in $GDS_FILES; do
             python run_verification.py "$file"
           done
 
