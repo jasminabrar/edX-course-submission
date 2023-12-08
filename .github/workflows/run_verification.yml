@@ -7,6 +7,9 @@ on:
       - '**/*.gds'
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 
 jobs:
@@ -31,15 +34,19 @@ jobs:
         id: run-script
         run: |
         
-          #locate the .gds file and set as environment variable
-          export GDS_FILE=$(find . -type f -name "*.gds" -exec basename {} \; | head -n 1)
-          echo "GDS_FILE=$GDS_FILE" >> $GITHUB_ENV
+          #locate the .gds files and set as environment variable
+          export GDS_FILES=$(find . -type f -name "*.gds" -exec basename {} \;)
+          echo "GDS_FILES=$GDS_FILES" >> $GITHUB_ENV
 
-          # print the name of the .gds file
-          echo "GDS File: $GDS_FILE"
+          # print the name of the .gds files
+          echo "GDS Files: $GDS_FILES"
         
-          # run layout verification
-          python run_verification.py "$GDS_FILE"
+          IFS=' '
+          
+          # run layout verification on each .gds file
+          for file in $GDS_FILES: do
+            python run_verification.py "$file"
+          done
 
       - name: Extract GDS File Name
         run: |
@@ -51,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: layout-errors
-          path: /home/runner/work/edX-course-submission/edX-course-submission/${{ env.GDS_FILE_NAME }}.lyrdb
+          path: /home/runner/work/edX-course-submission/edX-course-submission/
 
       - name: fail if there are errors from layout verification
         run: |
